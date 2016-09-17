@@ -2,44 +2,45 @@
 
 var Engine = function () {
 
-    this.nbBilles = 0;
-    this.colorWhoStart = 'blanc';
+    var nbBille = 0 ;
 
-this.generatePlateau = function(){
-
-    
-     Array.matrix = function(numrows, numcols, initial) {
-         var arr = [];
-         for (var i = 0; i < numrows; ++i) {
-             var columns = [];
-             for (var j = 0; j < numcols; ++j) {
-                 columns[j] = initial;
-             }
-             arr[i] = columns;
-         }
-         return arr;
-     }
-
-         var plateau = Array.matrix(6,6,0);
-
-     var somme = 0;
-     for (var i=0; i < plateau.length;i++){
-
-        for (var j = 0 ; j<plateau.length;j++){
-
-           if (plateau[i][j] != 0){
-
-               console.log('des billes sont présentes sur le plateau');
-           }
+    //création du plateau de jeu plateau[0] = Hgauche, [1] = Hdroite, [2] = Bgauche, [3] = Bdroite
+    var plateauJeu = new Array(4);
+    for(var i = 0; i < plateauJeu.length ; i++)
+    {
+        plateauJeu[i] = new Array(9);
+        for(var j = 0; j<plateauJeu[i].length ; j++)
+        {
+            plateauJeu[i][j] = 0;
         }
+    }
 
-     }
+    //retourne le nombre de bille
+    this.getNbBilles=function(){
+        console.log(plateauJeu);
+        return nbBille;
+    };
 
+    var player = "blanc" ;
+    // retourne le joueur
+    this.getPlayer=function(){
 
+        return player;
+    }
+    // change la couleur selon le joueur qui joue pour le tour suivant
+    this.playerPlay = function(){
 
-  };
-
-
+        if(player == "noir"){
+            player = "blanc";
+        }
+        else if(player == "blanc")
+        {
+            player = "noir";
+        }
+        else{
+            player = "blanc";
+        }
+    };
 
 
     this.mvBille = function(mouvement){
@@ -54,8 +55,9 @@ this.generatePlateau = function(){
             retour = true;
 
         }
-      return retour;
+        return retour;
     };
+
 
 
 };
