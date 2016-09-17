@@ -19,16 +19,19 @@ PalettoTestCase.prototype.testStory2 = function (){
 PalettoTestCase.prototype.testStory3 = function(){
 
 
+     assertTrue(engineTest.mvBille("a1"));
 
 };
 
 PalettoTestCase.prototype.testStory4 = function(){
 
 
+    assertTrue(engineTest.getNbBilles()==1);
 
 };
 
 PalettoTestCase.prototype.testStory5 = function(){
+
 
 
 };

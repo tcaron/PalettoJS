@@ -17,11 +17,12 @@ var Engine = function () {
 
     //retourne le nombre de bille
     this.getNbBilles=function(){
-        console.log(plateauJeu);
+
         return nbBille;
     };
 
     var player = "blanc" ;
+
     // retourne le joueur
     this.getPlayer=function(){
 
@@ -42,19 +43,27 @@ var Engine = function () {
         }
     };
 
+    //ajoute une bille sur le pateau
+    this.addBilles = function(){
+
+        nbBille++;
+    };
+
 
     this.mvBille = function(mouvement){
 
-        var retour = false ;
-        var lettre = mouvement.charCodeAt(0);
-        var chiffre = mouvement.charCodeAt(1);
+        var retour = false  ;
+        var lettre = mouvement.charCodeAt(0)-97;
+        var chiffre = mouvement.charCodeAt(1)-49;
 
+        if (plateauJeu[lettre][chiffre] == 0){
 
-        if (lettre == 'a'.charCodeAt(0) && chiffre =='1'.charCodeAt(0)){
-
+            console.log('Emplacement disponible');
+            nbBille++;
             retour = true;
 
         }
+        console.log(retour);
         return retour;
     };
 
