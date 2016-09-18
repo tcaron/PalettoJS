@@ -43,12 +43,6 @@ var Engine = function () {
         }
     };
 
-    //ajoute une bille sur le pateau
-    this.addBilles = function(){
-
-        nbBille++;
-    };
-
 
     this.mvBille = function(mouvement){
 
@@ -63,8 +57,23 @@ var Engine = function () {
             retour = true;
 
         }
-        console.log(retour);
+
         return retour;
+    };
+
+    this.rotation = function (numPlateau){
+
+         var plateauRotation = new Array(9);
+
+          plateauJeu[numPlateau][0] = plateauRotation;
+          plateauJeu[numPlateau][1] =
+          plateauJeu[numPlateau][2] =
+          plateauJeu[numPlateau][3] =
+          plateauJeu[numPlateau][4] =
+          plateauJeu[numPlateau][5] =
+          plateauJeu[numPlateau][6] =
+          plateauJeu[numPlateau][7] =
+          plateauJeu[numPlateau][8] =
     };
 
 
