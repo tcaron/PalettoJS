@@ -32,9 +32,12 @@ PalettoTestCase.prototype.testStory4 = function(){
 
 PalettoTestCase.prototype.testStory5 = function(){
 
-
+    engineTest.rotation(1,0);
+    var plateauTest = engineTest.getPlateauJeu();
+    assertTrue(plateauTest[0][2] == 1);
 
 };
+
 PalettoTestCase.prototype.testStory6 = function(){
 
     engineTest.playerPlay();
